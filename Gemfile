@@ -14,3 +14,5 @@ end
 
 gem 'jquery-rails'
 gem 'carrierwave'
+gem "twitter-bootstrap-rails"
+gem "mini_magick"
