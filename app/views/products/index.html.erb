@@ -9,7 +9,6 @@
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:image) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,7 +19,6 @@
         <td><%= product.title %></td>
         <td><%= product.description %></td>
         <td><%= image_tag(product.image_url(:facebook_thumb)) if product.image? %></td>
-        <td><%=l product.created_at %></td>
         <td>
 
           <div class="fb-like" data-href="<%= products_url %>" data-send="false" data-width="450" data-show-faces="false"></div>
