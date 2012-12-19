@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
 
+    @featured_product = Product.find(params[:featured_id]) if params[:featured_id]
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

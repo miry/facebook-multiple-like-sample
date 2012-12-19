@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <% product = @product ? @product.name : @products.first %>
+  <% product = @featured_product ? @featured_product.name : @products.first %>
   <meta property="og:title" content="<%= product.title %>"/>
   <meta property="og:image" content="<%= image_path product.image_url(:facebook_thumb) %>" />
 <% end %>
@@ -27,7 +27,7 @@
         <td><%= image_tag(product.image_url(:facebook_thumb)) if product.image? %></td>
         <td>
 
-          <div class="fb-like" data-href="<%= products_url %>" data-send="false" data-width="450" data-show-faces="false"></div>
+          <div class="fb-like" data-href="<%= products_url(featured_id: product.id) %>" data-send="false" data-width="450" data-show-faces="false"></div>
 
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_product_path(product), :class => 'btn btn-mini' %>
