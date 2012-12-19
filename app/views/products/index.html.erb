@@ -23,7 +23,7 @@
         <td><%=l product.created_at %></td>
         <td>
 
-          <div class="fb-like" data-href="<%= products_path %>" data-send="false" data-width="450" data-show-faces="false"></div>
+          <div class="fb-like" data-href="<%= products_url %>" data-send="false" data-width="450" data-show-faces="false"></div>
 
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_product_path(product), :class => 'btn btn-mini' %>
