@@ -1,3 +1,9 @@
+<% content_for :head do %>
+  <% product = @product ? @product.name : @products.first %>
+  <meta property="og:title" content="<%= product.title %>"/>
+  <meta property="og:image" content="<%= product.image_url(:facebook_thumb) %>" />
+<% end %>
+
 <%- model_class = Product -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
