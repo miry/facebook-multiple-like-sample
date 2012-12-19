@@ -26,22 +26,9 @@
         <td><%= product.description %></td>
         <td><%= image_tag(product.image_url(:facebook_thumb)) if product.image? %></td>
         <td>
-
           <div class="fb-like" data-href="<%= products_url(featured_id: product.id) %>" data-send="false" data-width="450" data-show-faces="false"></div>
-
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_product_path(product), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      product_path(product),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_product_path,
-            :class => 'btn btn-primary' %>
