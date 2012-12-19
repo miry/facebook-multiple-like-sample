@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <% product = @featured_product ? @featured_product.name : @products.first %>
+  <% product = @featured_product ? @featured_product : @products.first %>
   <meta property="og:title" content="<%= product.title %>"/>
   <meta property="og:image" content="<%= image_path product.image_url(:facebook_thumb) %>" />
 <% end %>
